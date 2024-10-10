@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A62C79"
+    tools:context="fragment.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home fragment \n \n Doan Cao Cuong \n 22115053122105"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:textSize="28sp"
+        />
+
+</RelativeLayout>
