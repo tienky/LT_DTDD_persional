@@ -58,42 +58,43 @@ public class MainActivity extends AppCompatActivity {
 
         loadHistory();
 
-    }
-     btnTong.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            // Lấy giá trị từ EditText
-            String soThuNhat = edtSoThuNhat.getText().toString();
-            String soThuHai = edtSoThuHai.getText().toString();
+        btnTong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Lấy giá trị từ EditText
+                String soThuNhat = edtSoThuNhat.getText().toString();
+                String soThuHai = edtSoThuHai.getText().toString();
 
-            if (!soThuNhat.isEmpty() && !soThuHai.isEmpty()) {
-                int so1 = Integer.parseInt(soThuNhat);
-                int so2 = Integer.parseInt(soThuHai);
-                int tong = so1 + so2;
+                if (!soThuNhat.isEmpty() && !soThuHai.isEmpty()) {
+                    int so1 = Integer.parseInt(soThuNhat);
+                    int so2 = Integer.parseInt(soThuHai);
+                    int tong = so1 + so2;
 
-                // Thêm kết quả vào danh sách
-                String result = so1 + " + " + so2 + " = " + tong;
-                ds_ketqua.add(result);
-                adapter.notifyDataSetChanged();
+                    // Thêm kết quả vào danh sách
+                    String result = so1 + " + " + so2 + " = " + tong;
+                    ds_ketqua.add(result);
+                    adapter.notifyDataSetChanged();
 
-                // Lưu kết quả vào SharePreferences
-                saveHistory(result);
+                    // Lưu kết quả vào SharePreferences
+                    saveHistory(result);
 
-                // Xóa dữ liệu sau khi tính tổng
+                    // Xóa dữ liệu sau khi tính tổng
+                    edtSoThuNhat.setText("");
+                    edtSoThuHai.setText("");
+                }
+            }
+        });
+
+        btnXoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Xóa nội dung của 2 EditText
                 edtSoThuNhat.setText("");
                 edtSoThuHai.setText("");
             }
-        }
-    });
+        });
 
-     btnXoa.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            // Xóa nội dung của 2 EditText
-            edtSoThuNhat.setText("");
-            edtSoThuHai.setText("");
-        }
-    });
+    }
 
     private void saveHistory(String result) {
         ds_ketqua.add(result);
@@ -110,6 +111,5 @@ public class MainActivity extends AppCompatActivity {
         ds_ketqua.addAll(savedResults);
         adapter.notifyDataSetChanged();
     }
-
 
 }
