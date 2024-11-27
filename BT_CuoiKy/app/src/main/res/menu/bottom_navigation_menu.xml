@@ -3,18 +3,16 @@
     <item
         android:id="@+id/feat"
         android:title="Featured"
-        >
+        />
 
     <item
         android:id="@+id/feed"
         android:title="Feed"
-        >
+       />
 
     <item
         android:id="@+id/settings"
         android:title="Settings"
-        >
+        />
 
-
-    </item>
 </menu>
